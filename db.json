@@ -1,0 +1,73 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "img": "https://grailpoint.com/wp-content/uploads/2020/09/22-2.jpg",
+      "name": "Jordan 4 Off-White",
+      "price": "1200.00 CHF"
+    },
+    {
+      "id": 2,
+      "img": "https://grailpoint.com/wp-content/uploads/2020/03/1.jpg",
+      "name": "Nike SB Dunk Travis Scott",
+      "price": "2000.00 CHF"
+    },
+    {
+      "id": 3,
+      "img": "https://grailpoint.com/wp-content/uploads/2019/11/gp_produktowe_cze-25.png",
+      "name": "Jordan 1 Retro High Travis Scott",
+      "price": "1700.00 CHF"
+    },
+    {
+      "id": 5,
+      "img": "http://cdn.shopify.com/s/files/1/0255/9429/8467/products/air-jordan-11-retro-low-legend-blue-av2187-117_2_b6tyjm_1800x1800.jpg?v=1620129696",
+      "name": "Jordan 11 Retro Low Legend Blue",
+      "price": "500.00 CHF"
+    },
+    {
+      "id": 6,
+      "img": "https://grailpoint.com/wp-content/uploads/2020/04/51-1.jpg",
+      "name": "Jordan 1 High Obsidian UNC",
+      "price": "300.00 CHF"
+    },
+    {
+      "id": 4,
+      "img": "https://grailpoint.com/wp-content/uploads/2020/09/42-2.jpg",
+      "name": "Jordan 1 High Satin Snake",
+      "price": "170.00 CHF"
+    },
+    {
+      "id": 7,
+      "img": "https://grailpoint.com/wp-content/uploads/2021/03/10.jpg",
+      "name": "Jordan 1 University Blue",
+      "price": "357.00 CHF"
+    },
+    {
+      "id": 8,
+      "img": "https://grailpoint.com/wp-content/uploads/2020/11/bez-nazwy-1.jpg",
+      "name": "Jordan 3 Retro Fragment",
+      "price": "300.00 CHF"
+    },
+    {
+      "id": 9,
+      "img": "https://grailpoint.com/wp-content/uploads/2020/02/y25.jpg",
+      "name": "Jordan 5 Retro Off-White Black",
+      "price": "250.00 CHF"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "Working with JavaScript",
+      "postId": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
