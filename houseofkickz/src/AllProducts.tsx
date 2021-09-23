@@ -13,22 +13,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MyCard from "./MyCard";
 import { Shoe } from "./Types/TypeShoe";
 import { SearchContext } from "./Context/SearchContext";
+import { getAllProducts } from "./ProductService";
 
 export default function AllProducts() {
   const [data, setData] = useState<Shoe[]>([]);
   //const [searchInput, setSearchInput] = useState("");
   const { search, addSearch } = useContext(SearchContext);
 
-  useEffect(() => {
-    fetch("http://localhost:3001/posts/")
-      .then((response) => {
-        return response.json(); //Die Posts werden zu einem Response.json Object
-      })
-      .then((myJson) => {
-        //Das returnte Objekt wird im myJson spiechern
-        setData(myJson); //Das Array wird hier im State data gespeichert
-      });
-  }, [search]);
+  //use the getAllProducts function and set the url as argument
+  getAllProducts("/posts")
+    //if you get the data save it to data
+    .then((response) => response.data)
+    //set the data to show the products
+    .then((data) => setData(data));
 
   return (
     <>
