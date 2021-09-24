@@ -17,11 +17,10 @@ import { getAllProducts } from "./ProductService";
 
 export default function AllProducts() {
   const [data, setData] = useState<Shoe[]>([]);
-  //const [searchInput, setSearchInput] = useState("");
   const { search, addSearch } = useContext(SearchContext);
 
   //use the getAllProducts function and set the url as argument
-  getAllProducts("/posts")
+  getAllProducts()
     //if you get the data save it to data
     .then((response) => response.data)
     //set the data to show the products
