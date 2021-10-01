@@ -1,10 +1,6 @@
-import React, {} from "react";
+import React from "react";
 import "./App.css";
-import {
-  Container,
-  Navbar,
-  Nav,
-} from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SingleProductPage from "./SingleProductPage";
@@ -14,42 +10,54 @@ import AllProducts from "./AllProducts";
 import About from "./About";
 import SignIn from "./Login";
 import SearchProvider from "./Context/SearchContext";
+import formikFormular from "./FormikFormular";
+import CreateNewProduct from "./CreateNewProduct";
 
 function App() {
   return (
     <>
       <div className="App">
-      <SearchProvider>
-        <Navbar bg="light" expand="lg">
-          <Container>
-            <Navbar.Brand href="/">House of Kickz</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/About.tsx">About</Nav.Link>
-                <Nav.Link href="/Contact.tsx">Contact Us</Nav.Link>
-                <Nav.Link href="/AllProducts.tsx">Shop</Nav.Link>
-                <Nav.Link href="/Login.tsx">Admin Mode</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-       
-        <BrowserRouter>
-          <Switch>
-            <Route exact path={"/"} component={LandingPage} />
-            <Route
-              exact
-              path={"/SingleProductpage/:id"}
-              component={SingleProductPage}
-            />
-            <Route exact path={"/Contact.tsx"} component={Contact} />
-            <Route exact path={"/AllProducts.tsx"} component={AllProducts} />
-            <Route exact path={"/About.tsx"} component={About} />
-            <Route exact path={"/Login.tsx"} component={SignIn} />
-          </Switch>
-        </BrowserRouter>
+        <SearchProvider>
+          <Navbar bg="light" expand="lg">
+            <Container>
+              <Navbar.Brand href="/">House of Kickz</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link href="/About.tsx">About</Nav.Link>
+                  <Nav.Link href="/Contact.tsx">Contact Us</Nav.Link>
+                  <Nav.Link href="/AllProducts.tsx">Shop</Nav.Link>
+                  <Nav.Link href="/FormikFormular.tsx">Sign in</Nav.Link>
+                  <Nav.Link href="/CreateNewProduct.tsx">New Product</Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
+
+          <BrowserRouter>
+            <Switch>
+              <Route exact path={"/"} component={LandingPage} />
+              <Route
+                exact
+                path={"/SingleProductpage/:id"}
+                component={SingleProductPage}
+              />
+              <Route exact path={"/Contact.tsx"} component={Contact} />
+              <Route exact path={"/AllProducts.tsx"} component={AllProducts} />
+              <Route exact path={"/About.tsx"} component={About} />
+              <Route
+                exact
+                path={"/FormikFormular.tsx"}
+                component={formikFormular}
+              />
+              <Route
+                exact
+                path={"/CreateNewProduct.tsx"}
+                component={CreateNewProduct}
+              />
+            </Switch>
+          </BrowserRouter>
         </SearchProvider>
       </div>
       <footer className="page-footer font-small blue pt-4">
@@ -77,6 +85,9 @@ function App() {
                 <li>
                   <a href="AllProducts.tsx">Shop</a>
                 </li>
+                <li>
+                  <a href="FormikFormular.tsx">Sign in</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -84,10 +95,11 @@ function App() {
 
         <div className="footer-copyright text-center py-3">
           Copyright © 2021
-          <a href="https://houseofkickz.netlify.app/" target="_blank">House of Kickz</a>
+          <a href="https://houseofkickz.netlify.app/" target="_blank">
+            House of Kickz
+          </a>
         </div>
       </footer>
-      
     </>
   );
 }

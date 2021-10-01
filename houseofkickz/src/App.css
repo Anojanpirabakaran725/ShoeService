@@ -152,7 +152,7 @@ fieldset {
 #contact textarea {
   width: 100%;
   border: 1px solid #ccc;
-  background: #fff; 
+  background: #fff;
   margin: 0 0 5px;
   padding: 10px;
 }
@@ -428,7 +428,7 @@ Navbar {
   }
 }
 
-.undertitle{
+.undertitle {
   z-index: 10;
   position: absolute;
   top: 50%;
@@ -437,4 +437,64 @@ Navbar {
   font-family: monospace;
   font-size: 70px;
   color: white;
+}
+
+.contact {
+  background-color: #000000;
+  padding: 10px;
+  padding-bottom: 25px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 10%;
+  padding-bottom: 25px;
+  margin-bottom: 200px;
+}
+
+.contactFields {
+  width: 7%;
+}
+
+.contactBtn {
+  background-color: #91c9ff;
+  width: 100% !important;
+  margin-top: 1% !important;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif !important;
+
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91c9ff;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.contactBtn:hover {
+  transition: 1s ease-in-out;
+  background: #4f95da;
+}
+
+.contactBtn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.contactBtn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+input {
+  width: 80%;
+  height: 40px;
+  margin-bottom: 1% !important;
+  margin-left: 13% !important;
+}
+
+.whiteText {
+  color: white;
+}
+
+
+body{
+  height: 100vh;
 }

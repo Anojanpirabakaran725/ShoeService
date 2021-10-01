@@ -1,5 +1,13 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Form } from "react-bootstrap";
+import { Field, Formik, FormikHelpers, validateYupSchema } from "formik";
+
+interface Values {
+  firstName: string;
+  lastName: string;
+  email: string;
+  comment: string;
+}
 
 export default function Contact() {
   return (
@@ -40,6 +48,7 @@ export default function Contact() {
         <h1 className="title">Contact us</h1>
         <h2 className="undertitle">Write us your Request</h2>
       </>
+
       <div className="container">
         <form id="contact" action="" method="post">
           <h3>Contact-Form</h3>
@@ -48,6 +57,7 @@ export default function Contact() {
           </fieldset>
           <fieldset>
             <input placeholder="Your Email Address" type="email" required />
+            
           </fieldset>
           <fieldset>
             <input
@@ -77,3 +87,5 @@ export default function Contact() {
     </>
   );
 }
+
+
