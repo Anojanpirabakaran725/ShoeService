@@ -8,10 +8,11 @@ import LandingPage from "./LandingPage";
 import Contact from "./Contact";
 import AllProducts from "./AllProducts";
 import About from "./About";
-import SignIn from "./Login";
 import SearchProvider from "./Context/SearchContext";
 import formikFormular from "./FormikFormular";
 import CreateNewProduct from "./CreateNewProduct";
+import register from "./Register";
+import Register from "./Register";
 
 function App() {
   return (
@@ -25,11 +26,12 @@ function App() {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                   <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/About.tsx">About</Nav.Link>
-                  <Nav.Link href="/Contact.tsx">Contact Us</Nav.Link>
-                  <Nav.Link href="/AllProducts.tsx">Shop</Nav.Link>
-                  <Nav.Link href="/FormikFormular.tsx">Sign in</Nav.Link>
-                  <Nav.Link href="/CreateNewProduct.tsx">New Product</Nav.Link>
+                  <Nav.Link href="/About">About</Nav.Link>
+                  <Nav.Link href="/Contact">Contact Us</Nav.Link>
+                  <Nav.Link href="/AllProducts">Shop</Nav.Link>
+                  <Nav.Link href="/FormikFormular">Sign in</Nav.Link>
+                  <Nav.Link href="/Register">Register</Nav.Link>
+                  <Nav.Link href="/CreateNewProduct">New Product</Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -43,17 +45,22 @@ function App() {
                 path={"/SingleProductpage/:id"}
                 component={SingleProductPage}
               />
-              <Route exact path={"/Contact.tsx"} component={Contact} />
-              <Route exact path={"/AllProducts.tsx"} component={AllProducts} />
-              <Route exact path={"/About.tsx"} component={About} />
+              <Route exact path={"/Contact"} component={Contact} />
+              <Route exact path={"/AllProducts"} component={AllProducts} />
+              <Route exact path={"/About"} component={About} />
               <Route
                 exact
-                path={"/FormikFormular.tsx"}
+                path={"/FormikFormular"}
                 component={formikFormular}
               />
               <Route
                 exact
-                path={"/CreateNewProduct.tsx"}
+                path={"/Register"}
+                component={Register}
+              />
+              <Route
+                exact
+                path={"/CreateNewProduct"}
                 component={CreateNewProduct}
               />
             </Switch>
@@ -77,16 +84,19 @@ function App() {
                   <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="/About.tsx">About</a>
+                  <a href="/About">About</a>
                 </li>
                 <li>
-                  <a href="Contact.tsx">Contact Us</a>
+                  <a href="Contact">Contact Us</a>
                 </li>
                 <li>
-                  <a href="AllProducts.tsx">Shop</a>
+                  <a href="AllProducts">Shop</a>
                 </li>
                 <li>
-                  <a href="FormikFormular.tsx">Sign in</a>
+                  <a href="FormikFormular">Sign in</a>
+                </li>
+                <li>
+                  <a href="Register">Register</a>
                 </li>
               </ul>
             </div>

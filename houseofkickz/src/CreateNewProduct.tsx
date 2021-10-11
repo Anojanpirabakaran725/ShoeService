@@ -2,8 +2,9 @@ import React from "react";
 import { Field, Form, Formik, FormikHelpers } from "formik";
 import "./App.css";
 import * as yup from "yup";
-import { postProduct } from "./ProductService";
+import { ProductService } from "./ProductService";
 
+const productservice = new ProductService();
 export interface Values {
   img: string;
   name: string;
@@ -34,7 +35,7 @@ export default function CreateNewProduct() {
               { setSubmitting }: FormikHelpers<Values>
             ) => {
               setTimeout(() => {
-                postProduct(values);
+                productservice.postProduct(values);
                 alert(JSON.stringify(values, null, 2));
                 setSubmitting(false);
               }, 500);
@@ -49,6 +50,7 @@ export default function CreateNewProduct() {
                   <Field
                     id="img"
                     name="img"
+                    classname="imageTextField"
                     placeholder="https://grailpoint.com/wp-content/uploads/2020/09/22-2.jpg"
                   ></Field>
                   {errors.img && touched.img ? <div>{errors.img}</div> : null}
@@ -61,6 +63,7 @@ export default function CreateNewProduct() {
                   <Field
                     id="name"
                     name="name"
+                    classname="nameTextField"
                     placeholder="Nike Airforce"
                   ></Field>
                   {errors.name && touched.name ? (

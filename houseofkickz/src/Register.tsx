@@ -2,13 +2,16 @@ import React from "react";
 import { Field, Form, Formik, FormikHelpers } from "formik";
 import "./App.css";
 import * as yup from "yup";
-import YupPassword from "yup-password";
-YupPassword(yup);
+import { AccountService } from "./AccountService";
+
+const accountService = new AccountService();
+
 export interface Values {
   firstname: string;
   lastname: string;
   email: string;
   password: string;
+  equalsPassword: string;
 }
 
 const schema = yup.object().shape({
@@ -20,20 +23,29 @@ const schema = yup.object().shape({
     .password()
     .min(6, "Password is too short - 6 Chars minimum")
     .required("Password is required"),
+    equalsPassword: yup
+    .string()
+    .password()
+    .min(6, "Password is too short - 6 Chars minimum")
+    .required("Password is required")
+    .test('passwords-match', 'Passwords must match', function(value) {
+        return this.parent.password === value;
+    })
 });
 
-export default function formikFormular() {
+export default function Register() {
   return (
     <>
       <div className="container">
         <div className="contact">
-          <h1 className="whiteText">Sign in</h1>
+          <h1 className="whiteText">Register</h1>
           <Formik
             initialValues={{
               firstname: "",
               lastname: "",
               email: "",
               password: "",
+              equalsPassword: "",
             }}
             validationSchema={schema}
             onSubmit={(
@@ -41,12 +53,13 @@ export default function formikFormular() {
               { setSubmitting }: FormikHelpers<Values>
             ) => {
               setTimeout(() => {
+                accountService.postAccount(values);
                 alert(JSON.stringify(values, null, 2));
                 setSubmitting(false);
               }, 500);
             }}
           >
-            {({ errors, touched, values }) => (
+            {({ errors, touched }) => (
               <Form>
                 <div className="col-md-12">
                   <label
@@ -100,6 +113,16 @@ export default function formikFormular() {
                   <Field id="password" name="password" type="password"></Field>
                   {errors.password && touched.password ? (
                     <div>{errors.password}</div>
+                  ) : null}
+                </div>
+
+                <div className="col-md-12">
+                  <label htmlFor="equalsPassword" className="contactFields whiteText">
+                    Confirm password
+                  </label>
+                  <Field id="equalsPassword" name="equalsPassword" type="password"></Field>
+                  {errors.equalsPassword && touched.equalsPassword ? (
+                    <div>{errors.equalsPassword}</div>
                   ) : null}
                 </div>
 

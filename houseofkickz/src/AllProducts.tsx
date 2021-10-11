@@ -13,18 +13,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MyCard from "./MyCard";
 import { Shoe } from "./Types/TypeShoe";
 import { SearchContext } from "./Context/SearchContext";
-import { getAllProducts } from "./ProductService";
+import { ProductService } from "./ProductService";
+
+const productservice = new ProductService();
 
 export default function AllProducts() {
   const [data, setData] = useState<Shoe[]>([]);
   const { search, addSearch } = useContext(SearchContext);
 
   //use the getAllProducts function and set the url as argument
-  getAllProducts()
-    //if you get the data save it to data
-    .then((response) => response.data)
-    //set the data to show the products
-    .then((data) => setData(data));
+  useEffect(() => {
+   productservice.getAllProducts()
+      //if you get the data save it to data
+      .then((response) => response.data)
+      //set the data to show the products
+      .then((data) => setData(data));
+  }, []);
 
   return (
     <>

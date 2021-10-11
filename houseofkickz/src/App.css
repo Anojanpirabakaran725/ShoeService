@@ -340,7 +340,7 @@ fieldset {
 }
 
 .button {
-  border-radius: 4px;
+  border-radius: 4%;
   background-color: #c3c9f9;
   border: none;
   color: #ffffff;
@@ -351,6 +351,11 @@ fieldset {
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+}
+
+.button:hover {
+  transition: 2s;
+  box-shadow: inset 200px 100px 200px 100px #ff6060;
 }
 
 .button span {
@@ -406,15 +411,21 @@ Navbar {
   font-size: 70px;
   border-radius: 4px;
   background-color: #0da4e3;
-  border: none;
   color: #ffffff;
   text-align: center;
   font-size: 28px;
   padding: 20px;
   width: 200px;
-  transition: all 0.5s;
   cursor: pointer;
+  border: none;
   margin: 5px;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.button2:hover {
+  transition: 2s;
+  box-shadow: inset 200px 100px 200px 100px #ff6060;
 }
 
 @media all and (min-width: 480px) {
@@ -460,7 +471,6 @@ Navbar {
   margin-top: 1% !important;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif !important;
-
   cursor: pointer;
   background: transparent;
   border: 1px solid #91c9ff;
@@ -494,7 +504,6 @@ input {
   color: white;
 }
 
-
-body{
+body {
   height: 100vh;
 }

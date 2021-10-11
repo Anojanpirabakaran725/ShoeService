@@ -15,7 +15,7 @@ function MyCardSingle(props: Shoe) {
         <Card.Text className="card-text-price">{props.price}</Card.Text> <br />
         <button
           className="button"
-          onClick={() => history1.push("/AllProducts.tsx")}
+          onClick={() => history1.push("/AllProducts")}
         >
           Back
         </button>

@@ -3,22 +3,28 @@ import { SetStateAction, useContext, useState } from "react";
 import SearchContext from "./Context/SearchContext";
 import { Shoe } from "./Types/TypeShoe";
 import { Values } from "./CreateNewProduct";
+export class ProductService {
+  //create axios
+  client = axios.create({
+    //set the base url
+    baseURL: "http://localhost:8080",
+  });
 
-//create axios
-const client = axios.create({
-  //set the base url
-  baseURL: "http://localhost:3004",
-});
+  getAllProducts() {
+    return this.client.get("/products/");
+  }
 
-export function getAllProducts() {
-  return client.get("/posts");
-}
+  getSingleProduct(id: String) {
+    return this.client.get("/products/" + id);
+  }
 
-export function getSingleProduct(url: String) {
-  return client.get("/posts/" + url);
-}
-
-export function postProduct(data: Values) {
-  const postValues = data;
-  return client.post("/posts", postValues);
+  postProduct(data: Values) {
+    const postValues = data;
+    return this.client.post("/products/", postValues);
+  }
+  /*
+  updateProduct(data: Values) {
+    const updateValues = data;
+    return this.client.put("/product/", updateValues);
+  }*/
 }

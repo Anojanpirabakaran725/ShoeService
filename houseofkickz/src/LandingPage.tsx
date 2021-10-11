@@ -44,7 +44,7 @@ export default function LandingPage() {
       </>
       <button
         className="button2"
-        onClick={() => history3.push("/AllProducts.tsx")}
+        onClick={() => history3.push("/AllProducts")}
       >
         Buy now
       </button>

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import MyCardSingle from "./MyCardSingle";
-import { getSingleProduct } from "./ProductService";
 import { Shoe } from "./Types/TypeShoe";
 import { SinglePost } from "./Types/TypeSinglePost";
+import { ProductService } from "./ProductService";
+
+const productservice = new ProductService();
 
 export default function SingleProductPage() {
   const { id } = useParams<SinglePost>();
@@ -12,7 +14,7 @@ export default function SingleProductPage() {
   const [data, setData] = useState<Shoe>({} as Shoe);
 
   //use the getAllProducts function and set the url as argument
-  getSingleProduct(id)
+  productservice.getSingleProduct(id)
     //if you get the products save it to data
     .then((response) => response.data)
     //set the data to show the products

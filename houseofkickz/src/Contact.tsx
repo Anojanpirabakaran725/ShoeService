@@ -48,44 +48,6 @@ export default function Contact() {
         <h1 className="title">Contact us</h1>
         <h2 className="undertitle">Write us your Request</h2>
       </>
-
-      <div className="container">
-        <form id="contact" action="" method="post">
-          <h3>Contact-Form</h3>
-          <fieldset>
-            <input placeholder="Your name" type="text" required autoFocus />
-          </fieldset>
-          <fieldset>
-            <input placeholder="Your Email Address" type="email" required />
-            
-          </fieldset>
-          <fieldset>
-            <input
-              placeholder="Your Phone Number (optional)"
-              type="tel"
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <textarea
-              placeholder="Type your message here...."
-              required
-            ></textarea>
-          </fieldset>
-          <fieldset>
-            <button
-              name="submit"
-              type="submit"
-              id="contact-submit"
-              data-submit="...Sending"
-            >
-              Submit
-            </button>
-          </fieldset>
-        </form>
-      </div>
     </>
   );
 }
-
-
